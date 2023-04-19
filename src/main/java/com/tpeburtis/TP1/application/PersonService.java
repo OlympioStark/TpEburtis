@@ -8,12 +8,11 @@ import java.util.List;
 
 public interface PersonService {
 
-    PersonVO save(PersonVO person);
+    PersonVO create(PersonVO person);
 
     PersonVO findById(Long idPers);
-
     List<PersonVO> findAll();
-    Person updatePerson(Long IdPers);
+    Person updatePers(Long IdPers, PersonVO person);
     void deletePers(Long idPers);
 
 }
