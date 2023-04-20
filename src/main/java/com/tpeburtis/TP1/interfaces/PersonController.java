@@ -5,6 +5,8 @@ import com.tpeburtis.TP1.domain.person.Person;
 import com.tpeburtis.TP1.domain.person.PersonVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -14,35 +16,36 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/api/rest/person")
-@CrossOrigin("*")
+@CrossOrigin(allowedHeaders = "*", origins = "*")
 public class PersonController {
 
     private final PersonService personService;
     private final Logger logger = LoggerFactory.getLogger(PersonController.class);
 
+    @Autowired
     public PersonController(PersonService personService) {
         this.personService = personService;
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<PersonVO> fetchPersonById(@PathVariable("id") Long idPers) {
+    public ResponseEntity<Person> fetchPersonById(@PathVariable("id") Long idPers) {
 
         logger.info("Inside fetchPersonById PersonController");
-        PersonVO persVO = personService.findById(idPers);
+        Person persVO = personService.findById(idPers);
         return ResponseEntity.status(HttpStatus.OK).body(persVO);
     }
 
     @GetMapping()
-    public ResponseEntity<List<PersonVO>> fetchAllPerson() {
+    public ResponseEntity<List<Person>> fetchAllPerson() {
         logger.info("Inside fetchAllPerson: All person");
-        List<PersonVO> personList = personService.findAll();
+        List<Person> personList = personService.findAll();
         return ResponseEntity.status(HttpStatus.OK).body(personList);
     }
 
     @PostMapping()
-    public ResponseEntity<PersonVO> createPerson(@Validated @RequestBody PersonVO pers) {
+    public ResponseEntity<Person> createPerson(@Validated @RequestBody PersonVO pers) {
         logger.info("Inside createPerson PersonController");
-        PersonVO persVO = personService.create(pers);
+        Person persVO = personService.create(pers);
         return ResponseEntity.status(HttpStatus.CREATED).body(persVO);
     }
 

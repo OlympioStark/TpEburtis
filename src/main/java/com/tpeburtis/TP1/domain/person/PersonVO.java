@@ -65,7 +65,7 @@ public class PersonVO {
         if (personVO == null) {
             return null;
         }
-        Person person = new Person();
+        Person person = new Person(personVO);
         person.setIdPerson(personVO.getIdPerson());
         person.setLastName(personVO.getLastName());
         person.setFirstName(personVO.getFirstName());

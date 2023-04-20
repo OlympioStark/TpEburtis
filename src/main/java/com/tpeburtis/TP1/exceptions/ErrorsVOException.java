@@ -1,4 +1,4 @@
 package com.tpeburtis.TP1.exceptions;
 
-public class ErrorCodes {
+public class ErrorsVOException {
 }

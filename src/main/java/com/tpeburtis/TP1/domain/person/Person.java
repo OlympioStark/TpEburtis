@@ -1,20 +1,25 @@
 package com.tpeburtis.TP1.domain.person;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name ="person")
 public class Person {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idPerson;
     private String lastName;
     private String firstName;
     private int age;
+
+    public Person() {}
+
+    public Person(PersonVO person) {
+        this.lastName = person.getLastName();
+        this.firstName = person.getFirstName();
+        this.age = person.getAge();
+    }
 
     public long getIdPerson() {
         return idPerson;

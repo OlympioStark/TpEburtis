@@ -1,5 +1,5 @@
 package com.tpeburtis.TP1.exceptions;
 
-public class InvalidEntityException {
+public class InvalidEntityException extends RuntimeException {
 
 }
