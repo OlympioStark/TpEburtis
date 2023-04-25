@@ -1,18 +1,19 @@
-<p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button>
 <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
     <div class="container">
-        <div class="p-inputgroup">
-            <input pInputText id="lastName" [(ngModel)]="person.lastName" placeholder="Lastname" />
-        </div>
-        <div class="p-inputgroup">
-            <input pInputText id="firstName" [(ngModel)]="person.firstName" placeholder="Firstname" />
-        </div>
-        <div class="p-inputgroup">
-            <input pInputText id="age" [(ngModel)]="person.age" placeholder="Age" />
-        </div>
-        <!-- <div class="card flex justify-content-center">
-            <input pInputText id="department" [(ngModel)]="departeme" />
-            <label htmlFor="department">Department</label>
-        </div> -->
+        <form>
+            <div class="p-inputgroup">
+                <input pInputText id="lastName" [(ngModel)]="person.lastName" placeholder="Lastname" />
+            </div>
+            <div class="p-inputgroup">
+                <input pInputText id="firstName" [(ngModel)]="person.firstName" placeholder="Firstname" />
+            </div>
+            <div class="p-inputgroup">
+                <input pInputText id="age" [(ngModel)]="person.age" placeholder="Age" />
+            </div>
+            <!-- <div class="card flex justify-content-center">
+                <input pInputText id="department" [(ngModel)]="departeme" />
+                <label htmlFor="department">Department</label>
+            </div> -->
+        </form>
     </div>
 </p-dialog>

@@ -19,13 +19,17 @@ import { AppComponent } from './app.component';
 import { PersonneListComponent } from './pages/personne/personne-list/personne-list.component';
 import { AddPersonneComponent } from './pages/personne/add-personne/add-personne.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DeletePersonneComponent } from './pages/personne/delete-personne/delete-personne.component';
+import { UpdatePersonneComponent } from './pages/personne/update-personne/update-personne.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonneListComponent,
     AddPersonneComponent,
-    HomeComponent
+    HomeComponent,
+    DeletePersonneComponent,
+    UpdatePersonneComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +44,7 @@ import { HomeComponent } from './pages/home/home.component';
     ButtonModule,
     DialogModule,
     DynamicDialogModule,
-    FormsModule,
-    ToastModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

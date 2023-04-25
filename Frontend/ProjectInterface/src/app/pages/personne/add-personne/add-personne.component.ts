@@ -10,14 +10,12 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 })
 export class AddPersonneComponent {
 
-  person: Personne = new Personne();
+  person!: Personne;
 
-  visible!: boolean;
+  visible?: boolean;
 
   constructor() {}
 
-  showDialog() {
-    this.visible = true;
-}
+  
 
 }

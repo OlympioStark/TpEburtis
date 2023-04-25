@@ -1,6 +1,10 @@
 package com.tpeburtis.TP1.domain.departement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.tpeburtis.TP1.domain.person.Person;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "department")
@@ -38,4 +42,16 @@ public class Department {
     public void setDesignation(String designation) {
         this.designation = designation;
     }
+
+    /*public List<Person> getPersonDep() {
+        return personDep;
+    }
+
+    public void setPersonDep(List<Person> personDep) {
+        this.personDep = personDep;
+    }
+
+    @OneToMany(mappedBy = "departements")
+    @JsonIgnore
+    private List<Person> personDep;*/
 }

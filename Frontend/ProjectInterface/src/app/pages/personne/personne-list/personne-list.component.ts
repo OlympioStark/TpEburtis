@@ -3,6 +3,7 @@ import { Table } from 'primeng/table';
 import { Personne } from 'src/app/models/personne';
 import { PersonneService } from 'src/app/services/personne.service';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-personne-list',
@@ -15,8 +16,10 @@ export class PersonneListComponent implements OnInit {
   // personne!: Personne;
 
   loading: boolean = false;
-
-  activityValues: number[] = [0, 100];
+  visible?: boolean;
+  visible1?: boolean;
+  form!: FormGroup;
+  personSelected: Personne = new Personne(0, "", "", 0);
 
   constructor(private personneService: PersonneService, private router: Router) {}
 
@@ -25,19 +28,21 @@ export class PersonneListComponent implements OnInit {
         this.personnes = data;
         this.loading = false;
         console.log(this.personnes);
-
-        
       })
   }
 
   newPerson() {
-  
+    this.visible1 = true;
   }
 
-  updatePerson() {
-
+  showDialog() {
+    this.visible = true;
+    
   }
 
   deletePerson() {}
+
+  createPerson() {}
+  annulateCreation() {}
 
 }

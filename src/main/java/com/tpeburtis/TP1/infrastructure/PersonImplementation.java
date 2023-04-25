@@ -39,7 +39,7 @@ public class PersonImplementation implements PersonService {
     @Override
     public Person updatePers(Long idPers, PersonVO person) {
         Person person1 = personRepository.findById(idPers)
-                .orElseThrow(() -> new EntityNotFoundException("Carte not exist with id : "+ idPers));
+                .orElseThrow(() -> new EntityNotFoundException(" not exist with id : "+ idPers));
 
         person1.setLastName(person.getLastName());
         person1.setFirstName(person.getFirstName());

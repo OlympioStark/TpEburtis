@@ -1,5 +1,6 @@
 package com.tpeburtis.TP1.domain.person;
 
+import com.tpeburtis.TP1.domain.departement.Department;
 import jakarta.persistence.*;
 
 @Entity
@@ -52,5 +53,18 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    /*public Department getDepartements() {
+        return departements;
+    }
+
+    public void setDepartements(Department departements) {
+        this.departements = departements;
+    }
+
+    @ManyToOne
+    @MapsId("idDep")
+    @JoinColumn(name="id_depart")
+    private Department departements;*/
 }
 

@@ -1,5 +1,6 @@
 package com.tpeburtis.TP1.domain.person;
 
+import com.tpeburtis.TP1.domain.departement.Department;
 import lombok.Builder;
 
 @Builder
@@ -9,12 +10,14 @@ public class PersonVO {
     private String lastName;
     private String firstName;
     private int age;
+    /*private Department departements;*/
 
     public PersonVO(long idPerson, String lastName, String firstName, int age) {
         this.idPerson = idPerson;
         this.lastName = lastName;
         this.firstName = firstName;
         this.age = age;
+        /*this.departements = departements;*/
     }
 
     public long getIdPerson() {
@@ -49,6 +52,10 @@ public class PersonVO {
         this.age = age;
     }
 
+    /*public Department getDepartements() {
+        return departements;
+    }*/
+
     public static PersonVO fromEntity(Person person) {
         if (person == null) {
             return null;
@@ -58,6 +65,7 @@ public class PersonVO {
                 .lastName(person.getLastName())
                 .firstName(person.getFirstName())
                 .age(person.getAge())
+                /*.departements(person.getDepartements())*/
                 .build();
     }
 
@@ -70,6 +78,7 @@ public class PersonVO {
         person.setLastName(personVO.getLastName());
         person.setFirstName(personVO.getFirstName());
         person.setAge(personVO.getAge());
+       /* person.setDepartements(personVO.getDepartements());*/
         return person;
     }
 
